@@ -42,8 +42,17 @@
       });
 
       // If keyword is blank, return all
-      results = !results || !results.length ? this.models : results;
 
+      //BEGIN EDITS
+      // COMMENTED OUT LINE BELOW BECAUSE IT DOESNT WORK RIGHT -- RETURNS ALL HITS IF THERE ARE NONE
+      // results = !results || !results.length ? this.models : results;
+
+      // ADDED CONDITIONAL BELOW TO REPLACE BROKEN TERNARY THAT FOLLOWS
+      if (!keyword) {
+        results = this.models
+      }
+
+      // END EDITS
       // Instantiate new Collection
       var collection = new Backbone.Collection( results );
       collection.searching = { 
