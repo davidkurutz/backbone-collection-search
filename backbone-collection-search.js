@@ -47,7 +47,7 @@
       // COMMENTED OUT LINE BELOW BECAUSE IT DOESNT WORK RIGHT -- RETURNS ALL HITS IF THERE ARE NONE
       // results = !results || !results.length ? this.models : results;
 
-      // ADDED CONDITIONAL BELOW TO REPLACE BROKEN TERNARY THAT FOLLOWS
+      // ADDED CONDITIONAL BELOW TO REPLACE BROKEN TERNARY
       if (!keyword) {
         results = this.models
       }
